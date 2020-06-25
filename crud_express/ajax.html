@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ajax</title>
+</head>
+<body>
+<script type="text/javascript">
+	function get(url,callback){
+		var oReq=new XMLHttpRequest();
+		oReq.onload=function(){
+			//console.log(oReq.responseText);
+			callback(oReq.responseText);
+		}
+		oReq.open("get",url,true);
+		oReq.send();
+
+	}
+	get('db.json',function(data){
+		console.log(data);
+	})
+</script>
+</body>
+</html>
